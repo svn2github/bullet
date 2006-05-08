@@ -40,6 +40,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libbulletopenglsupport", "l
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libbulletphysicsinterfacecommon", "libbulletphysicsinterfacecommon.vcproj", "{85BCCE3E-992B-B6D7-28F6-CF0A12680822}"
 EndProject
+
 Global
 	GlobalSection(SolutionConfiguration) = preSolution
 		ConfigName.0 = Release
