@@ -1265,16 +1265,15 @@ PHY_IPhysicsController* CcdPhysicsEnvironment::rayTest(PHY_IPhysicsController* i
 
 	SimdVector3	hitPointWorld,normalWorld;
 
-	CollisionWorld::ClosestRayResultCallback rayCallback(rayFrom,rayTo);
+	//Either Ray Cast with or without filtering
 
-
-
-	FilterClosestRayResultCallback	 filterCallback(ignoreClient,rayFrom,rayTo);
+	//CollisionWorld::ClosestRayResultCallback rayCallback(rayFrom,rayTo);
+	FilterClosestRayResultCallback	 rayCallback(ignoreClient,rayFrom,rayTo);
 
 
 	PHY_IPhysicsController* nearestHit = 0;
 
-	m_collisionWorld->RayTest(rayFrom,rayTo,filterCallback);
+	m_collisionWorld->RayTest(rayFrom,rayTo,rayCallback);
 	if (rayCallback.HasHit())
 	{
 		nearestHit = static_cast<CcdPhysicsController*>(rayCallback.m_collisionObject->m_userPointer);
