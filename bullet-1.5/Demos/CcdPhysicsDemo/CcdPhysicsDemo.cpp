@@ -562,7 +562,7 @@ void renderme()
 		yStart += yIncr;
 
 		glRasterPos3f(xOffset,yStart,0);
-		sprintf(buf,"c CCD mode (adhoc) = %i",useCCD);
+		sprintf(buf,"1 CCD mode (adhoc) = %i",useCCD);
 		BMF_DrawString(BMF_GetFont(BMF_kHelvetica10),buf);
 		yStart += yIncr;
 

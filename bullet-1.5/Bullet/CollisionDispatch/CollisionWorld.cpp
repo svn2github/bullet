@@ -260,11 +260,11 @@ void	CollisionWorld::RayTest(const SimdVector3& rayFromWorld, const SimdVector3&
 
 							virtual void ReportHit(const SimdVector3& hitNormalLocal, float hitFraction, int partId, int triangleIndex )
 							{
-								LocalShapeInfo	shapeInfo;
+								CollisionWorld::LocalShapeInfo	shapeInfo;
 								shapeInfo.m_shapePart = partId;
 								shapeInfo.m_triangleIndex = triangleIndex;
 								
-								LocalRayResult rayResult
+								CollisionWorld::LocalRayResult rayResult
 								(m_collisionObject, 
 									&shapeInfo,
 									hitNormalLocal,

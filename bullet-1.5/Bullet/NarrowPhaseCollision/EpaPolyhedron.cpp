@@ -17,11 +17,13 @@ subject to the following restrictions:
 #include "SimdScalar.h"
 #include "SimdVector3.h"
 #include "SimdPoint3.h"
+#include "Memory2.h"
 
 #include <list>
 #ifdef _DEBUG
 #include <hash_map>
 #endif
+
 
 #include "NarrowPhaseCollision/EpaCommon.h"
 
@@ -61,9 +63,19 @@ bool EpaPolyhedron::Create( SimdPoint3* pInitialPoints,
 
 	bool* pDiffCoords = new bool[ 3 * nbInitialPoints ];
 	
-	std::memset( pDiffCoords, 0, sizeof( bool ) * 3 * nbInitialPoints );
 
-	for ( int axis = 0; axis < 3; ++axis )
+	int i;
+	for (i=0;i<nbInitialPoints*3;i++)
+	{
+		pDiffCoords[i] = false;
+	}
+
+	//::memset( pDiffCoords, 0, sizeof( bool ) * 3 * nbInitialPoints );
+
+
+	int axis;
+
+	for ( axis = 0; axis < 3; ++axis )
 	{
 		for ( int i = 0; i < nbInitialPoints; ++i )
 		{
@@ -96,7 +108,7 @@ bool EpaPolyhedron::Create( SimdPoint3* pInitialPoints,
 
 	int axisOrderIndices[ 3 ] = { 0, 1, 2 };
 
-	for ( int i = 0; i < 2/*round( nbAxis / 2 )*/; ++i )
+	for ( i = 0; i < 2/*round( nbAxis / 2 )*/; ++i )
 	{
 		if ( nbDiffCoords[ i ] > nbDiffCoords[ i + 1 ] )
 		{
@@ -118,7 +130,7 @@ bool EpaPolyhedron::Create( SimdPoint3* pInitialPoints,
 
 	int finalPointsIndex = 0;
 
-	for ( int axis = 0; ( axis < 3 ) && ( nbSuccessfullAxis < 2 ); ++axis )
+	for ( axis = 0; ( axis < 3 ) && ( nbSuccessfullAxis < 2 ); ++axis )
 	{
 		int axisIndex = axisOrderIndices[ axis ];
 			
