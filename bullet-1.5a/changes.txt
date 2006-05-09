@@ -1,6 +1,9 @@
 Bullet Continuous Collision Detection and Physics Library
 Erwin Coumans
-
+2006 May 9
+	Fixed raycasting filtering
+	Moved repository to SVN at https://svn.sourceforge.net/svnroot/bullet
+		
 2006 April 27
 	Moved raycasting to CollisionWorld, to make it more generic
 	Added basic CCD option in the CcdCollisionDemo
