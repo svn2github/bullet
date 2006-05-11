@@ -258,7 +258,7 @@ void	CollisionWorld::RayTest(const SimdVector3& rayFromWorld, const SimdVector3&
 								}
 
 
-							virtual void ReportHit(const SimdVector3& hitNormalLocal, float hitFraction, int partId, int triangleIndex )
+							virtual float ReportHit(const SimdVector3& hitNormalLocal, float hitFraction, int partId, int triangleIndex )
 							{
 								CollisionWorld::LocalShapeInfo	shapeInfo;
 								shapeInfo.m_shapePart = partId;
@@ -270,7 +270,8 @@ void	CollisionWorld::RayTest(const SimdVector3& rayFromWorld, const SimdVector3&
 									hitNormalLocal,
 									hitFraction);
 								
-								m_resultCallback->AddSingleResult(rayResult);
+								return m_resultCallback->AddSingleResult(rayResult);
+								
 								
 							}
 	
