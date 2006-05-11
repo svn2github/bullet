@@ -228,7 +228,7 @@ int main(int argc,char** argv)
 		{
 			shapeProps.m_mass = 0.f;
 			ccdObjectCi.m_mass = shapeProps.m_mass;
-			ccdObjectCi.m_collisionFlags = CollisionObject::CollisionFlags::isStatic;
+			ccdObjectCi.m_collisionFlags = CollisionObject::isStatic;
 		}
 		else
 		{
