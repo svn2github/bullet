@@ -397,7 +397,24 @@ HTML_ALIGN_MEMBERS     = YES
 # Microsoft HTML help workshop to generate a compressed HTML help file (.chm) 
 # of the generated HTML documentation. 
 
-GENERATE_HTMLHELP      = NO
+GENERATE_HTMLHELP      = YES
+
+HHC_LOCATION = "C:\Program Files\HTML Help Workshop\hhc.exe"
+
+HTML_FILE_EXTENSION = .html
+HTML_HEADER = 
+HTML_FOOTER = 
+#HTML_STYLESHEET = "\\server\exchange\Software Development\Documentation\DoxyGen\doxygen.css"
+
+CHM_FILE = BulletDocs.chm
+HHC_LOCATION = "c:\program files\HTML Help Workshop\hhc.exe"
+GENERATE_CHI = YES
+BINARY_TOC = YES
+
+TOC_EXPAND = YES
+
+SHOW_DIRECTORIES       = YES
+
 
 # The DISABLE_INDEX tag can be used to turn on/off the condensed index at 
 # top of each HTML page. The value NO (the default) enables the index and 
@@ -408,7 +425,7 @@ DISABLE_INDEX          = NO
 # This tag can be used to set the number of enum values (range [1..20]) 
 # that doxygen will group on one line in the generated HTML documentation. 
 
-ENUM_VALUES_PER_LINE   = 4
+ENUM_VALUES_PER_LINE   = 1
 
 # If the GENERATE_TREEVIEW tag is set to YES, a side pannel will be
 # generated containing a tree-like index structure (just like the one that 
@@ -416,7 +433,7 @@ ENUM_VALUES_PER_LINE   = 4
 # JavaScript and frames is required (for instance Netscape 4.0+ 
 # or Internet explorer 4.0+). 
 
-GENERATE_TREEVIEW      = NO
+GENERATE_TREEVIEW      = YES
 
 # If the treeview is enabled (see GENERATE_TREEVIEW) then this tag can be 
 # used to set the initial width (in pixels) of the frame in which the tree 
