@@ -27,6 +27,9 @@
 // Credits: The Clock class was inspired by the Timer classes in 
 // Ogre (www.ogre3d.org).
 
+
+//#define USE_QUICKPROF 1
+
 #ifdef USE_QUICKPROF
 
 #ifndef QUICK_PROF_H
@@ -36,6 +39,12 @@
 #include <fstream>
 #include <string>
 #include <map>
+
+#ifdef __PPU__
+#include <sys/sys_time.h>
+#include <stdio.h>
+typedef uint64_t __int64;
+#endif
 
 #if defined(WIN32) || defined(_WIN32)
 	#define USE_WINDOWS_TIMERS
@@ -98,7 +107,17 @@ namespace hidden
 			mStartTick = GetTickCount();
 			mPrevElapsedTime = 0;
 #else
+#ifdef __PPU__
+
+	typedef uint64_t __int64;
+	typedef __int64  ClockSize;
+	ClockSize newTime;
+	__asm __volatile__( "mftb %0" : "=r" (newTime) : : "memory");
+	mStartTime = newTime;
+#else
 			gettimeofday(&mStartTime, NULL);
+#endif
+
 #endif
 		}
 
@@ -140,10 +159,23 @@ namespace hidden
 
 			return msecTicks;
 #else
+			
+#ifdef __PPU__
+	__int64 freq=sys_time_get_timebase_frequency();
+	 double dFreq=((double) freq) / 1000.0;
+	typedef uint64_t __int64;
+	typedef __int64  ClockSize;
+	ClockSize newTime;
+	__asm __volatile__( "mftb %0" : "=r" (newTime) : : "memory");
+	
+	return (newTime-mStartTime) / dFreq;
+#else
+
 			struct timeval currentTime;
 			gettimeofday(&currentTime, NULL);
 			return (currentTime.tv_sec - mStartTime.tv_sec) * 1000 + 
 				(currentTime.tv_usec - mStartTime.tv_usec) / 1000;
+#endif //__PPU__
 #endif
 		}
 
@@ -185,11 +217,24 @@ namespace hidden
 
 			return usecTicks;
 #else
+
+#ifdef __PPU__
+	__int64 freq=sys_time_get_timebase_frequency();
+	 double dFreq=((double) freq)/ 1000000.0;
+	typedef uint64_t __int64;
+	typedef __int64  ClockSize;
+	ClockSize newTime;
+	__asm __volatile__( "mftb %0" : "=r" (newTime) : : "memory");
+	
+	return (newTime-mStartTime) / dFreq;
+#else
+
 			struct timeval currentTime;
 			gettimeofday(&currentTime, NULL);
 			return (currentTime.tv_sec - mStartTime.tv_sec) * 1000000 + 
 				(currentTime.tv_usec - mStartTime.tv_usec);
-#endif
+#endif//__PPU__
+#endif 
 		}
 
 	private:
@@ -199,8 +244,13 @@ namespace hidden
 		LONGLONG mPrevElapsedTime;
 		LARGE_INTEGER mStartTime;
 #else
+#ifdef __PPU__
+		uint64_t	mStartTime;
+#else
 		struct timeval mStartTime;
 #endif
+#endif //__PPU__
+
 	};
 };
 

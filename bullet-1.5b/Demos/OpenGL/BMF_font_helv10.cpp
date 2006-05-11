@@ -1,5 +1,4 @@
 /**
- * $Id: BMF_font_helv10.cpp,v 1.6 2006/04/18 06:09:11 ejcoumans Exp $
  * ***** BEGIN GPL/BL DUAL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or

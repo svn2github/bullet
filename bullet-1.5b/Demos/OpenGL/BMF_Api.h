@@ -1,5 +1,4 @@
 /**
- * $Id: BMF_Api.h,v 1.6 2006/04/18 06:09:11 ejcoumans Exp $
  * ***** BEGIN GPL/BL DUAL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -31,7 +30,6 @@
 
 /**
 
- * $Id: BMF_Api.h,v 1.6 2006/04/18 06:09:11 ejcoumans Exp $
  * Copyright (C) 2001 NaN Technologies B.V.
  *
  * API of the OpenGL bitmap font library.
