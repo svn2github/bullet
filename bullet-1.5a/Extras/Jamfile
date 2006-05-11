@@ -1,3 +1,0 @@
-SubDir TOP Extras ;
-
-SubInclude TOP Extras PhysicsInterface ;
