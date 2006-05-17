@@ -37,6 +37,23 @@ subject to the following restrictions:
 
 #include "GLDebugDrawer.h"
 
+//#define COLLADA_PHYSICS_TEST 1
+#ifdef COLLADA_PHYSICS_TEST
+
+//Collada Physics test
+#define NO_LIBXML //do we need this?
+#include "FUtils/FUtils.h"
+#include "FCDocument/FCDocument.h"
+#include "FCDocument/FCDSceneNode.h"
+#include "FUtils/FUFileManager.h"
+#include "FUtils/FULogFile.h"
+#include "FCDocument/FCDPhysicsSceneNode.h"
+#include "FCDocument/FCDPhysicsModelInstance.h"
+#endif //COLLADA_PHYSICS_TEST
+
+
+
+
 #include "PHY_Pro.h"
 #include "BMF_Api.h"
 #include <stdio.h> //printf debugging
@@ -104,12 +121,76 @@ CollisionShape* shapePtr[numShapes] =
 };
 
 
+
+////////////////////////////////////
+
+#ifdef COLLADA_PHYSICS_TEST
+bool ConvertColladaPhysicsToBulletPhysics(const FCDPhysicsSceneNode* inputNode)
+{
+
+	assert(inputNode);
+
+	FCDPhysicsModelInstanceList models = inputNode->GetInstances();
+	//Go through all of the physics models
+	for (FCDPhysicsModelInstanceList::iterator itM=models.begin(); itM != models.end(); itM++)
+	{
+		
+		FCDEntityInstanceList& instanceList = (*itM)->GetInstances();
+		
+		//Go through all of the rigid bodies and rigid constraints in that model
+		for (FCDEntityInstanceList::iterator itE=instanceList.begin(); itE!=instanceList.end(); itE++)
+		{
+			if ((*itE)->GetType() == FCDEntityInstance::PHYSICS_RIGID_CONSTRAINT)
+			{
+				//not yet, could add point to point / hinge support easily
+			}
+			else 
+			if ((*itE)->GetType() == FCDEntityInstance::PHYSICS_RIGID_BODY)
+			{
+				
+				//not yet either ;-) Soon...
+                
+			}
+		
+		}
+		
+	}
+	
+	return true;
+}
+#endif //COLLADA_PHYSICS_TEST
+
+
+////////////////////////////////////
+
+
+
 GLDebugDrawer debugDrawer;
 
 int main(int argc,char** argv)
 {
 
+#ifdef COLLADA_PHYSICS_TEST
+	char* filename = "ColladaPhysics.dae";
+	FCDocument* document = new FCDocument();
+	FUStatus status = document->LoadFromFile(filename);
+	bool success = status.IsSuccessful();
+	printf ("Collada import %i\n",success);
 
+	if (success)
+	{
+		const FCDPhysicsSceneNode* physicsSceneRoot = document->GetPhysicsSceneRoot();
+		if (ConvertColladaPhysicsToBulletPhysics( physicsSceneRoot ))
+		{
+			printf("ConvertColladaPhysicsToBulletPhysics successfull\n");
+		} else
+		{
+			printf("ConvertColladaPhysicsToBulletPhysics failed\n");
+		}
+        
+
+	}
+#endif //COLLADA_PHYSICS_TEST
 
 	CollisionDispatcher* dispatcher = new	CollisionDispatcher();
 		
