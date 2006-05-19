@@ -1,5 +1,15 @@
 Bullet Continuous Collision Detection and Physics Library
 Erwin Coumans
+
+2006 May 19
+	Added restitution support
+	Moved out Friction and Dynamics info from ManifoldPoint (removed logical dependency)
+	Added a void* m_userPersistentData in ManifoldPoint.
+	Added a ContactDestroyedCallback, to allow user to handle destruction of m_userPersistentData
+
+2006 May 13
+	Fixed some bugs in friction / jacobian calculations. Reported by Dirk Gregorius. Thanks!
+
 2006 May 9
 	Fixed raycasting filtering
 	Moved repository to SVN at https://svn.sourceforge.net/svnroot/bullet
