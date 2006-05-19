@@ -1024,7 +1024,7 @@ void clientResetScene()
 		if (i>0)
 		{
 
-			if ((getDebugMode() & IDebugDraw::DBG_NoHelpText))
+			//if ((getDebugMode() & IDebugDraw::DBG_NoHelpText))
 			{
 				if (physObjects[i]->GetRigidBody()->GetCollisionShape()->GetShapeType() == BOX_SHAPE_PROXYTYPE)
 				{

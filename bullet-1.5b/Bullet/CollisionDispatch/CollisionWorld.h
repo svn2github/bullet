@@ -90,7 +90,7 @@ public:
 	{
 
 	}
-	virtual ~CollisionWorld() {}
+	virtual ~CollisionWorld();
 
 	virtual	void	UpdateActivationState();
 
