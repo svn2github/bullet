@@ -76,7 +76,7 @@ subject to the following restrictions:
 
 float deltaTime = 1.f/60.f;
 float bulletSpeed = 40.f;
-
+bool createConstraint = true;
 #ifdef WIN32
 #if _MSC_VER >= 1310
 //only use SIMD Hull code under Win32
@@ -123,7 +123,10 @@ static const int numShapes = 4;
 
 CollisionShape* shapePtr[numShapes] = 
 {
-	new BoxShape (SimdVector3(50,10,50)),
+	///Please don't make the box sizes larger then 1000: the collision detection will be inaccurate.
+	///See http://www.continuousphysics.com/Bullet/phpBB2/viewtopic.php?t=346
+
+	new BoxShape (SimdVector3(450,10,450)),
 		new BoxShape (SimdVector3(CUBE_HALF_EXTENTS,CUBE_HALF_EXTENTS,CUBE_HALF_EXTENTS)),
 		new SphereShape (CUBE_HALF_EXTENTS- 0.05f),
 
@@ -668,6 +671,7 @@ int main(int argc,char** argv)
 
 
 	//create a constraint
+	if (createConstraint)
 	{
 		//physObjects[i]->SetAngularVelocity(0,0,-2,true);
 		int constraintId;
@@ -717,6 +721,7 @@ void renderme()
 	debugDrawer.SetDebugMode(getDebugMode());
 
 	//render the hinge axis
+	if (createConstraint)
 	{
 		SimdVector3 color(1,0,0);
 		SimdVector3 dirLocal(0,1,0);
