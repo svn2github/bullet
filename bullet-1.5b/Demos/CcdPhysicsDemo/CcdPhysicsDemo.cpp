@@ -101,7 +101,7 @@ extern int glutScreenHeight;
 
 
 #ifdef _DEBUG
-const int numObjects = 22;
+const int numObjects = 120;//22;
 #else
 const int numObjects = 120;
 #endif
@@ -658,6 +658,13 @@ int main(int argc,char** argv)
 
 
 		physObjects[i]= new CcdPhysicsController( ccdObjectCi);
+
+		// Only do CCD if  motion in one timestep (1.f/60.f) exceeds CUBE_HALF_EXTENTS
+		physObjects[i]->GetRigidBody()->m_ccdSquareMotionTreshold = CUBE_HALF_EXTENTS;
+		
+		//Experimental: better estimation of CCD Time of Impact:
+		//physObjects[i]->GetRigidBody()->m_ccdSweptShereRadius = 0.5*CUBE_HALF_EXTENTS;
+
 		physicsEnvironmentPtr->addCcdPhysicsController( physObjects[i]);
 
 		if (i==1)

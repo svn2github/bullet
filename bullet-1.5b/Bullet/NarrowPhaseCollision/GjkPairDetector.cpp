@@ -120,7 +120,7 @@ void GjkPairDetector::GetClosestPoints(const ClosestPointInput& input,Result& ou
 				break;
 			}
 			bool check = (!m_simplexSolver->fullSimplex());
-				//&& squaredDistance > SIMD_EPSILON * m_simplexSolver->maxVertex());
+			//bool check = (!m_simplexSolver->fullSimplex() && squaredDistance > SIMD_EPSILON * m_simplexSolver->maxVertex());
 
 			if (!check)
 			{

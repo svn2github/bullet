@@ -48,7 +48,7 @@ struct Separation
 	short m_contact;
 };
 
-
+///Shape provides a interface for Hull class (convex hull calculation).
 class Shape
 {
 public:

@@ -27,6 +27,9 @@ subject to the following restrictions:
 struct	BroadphaseProxy;
 class	CollisionShape;
 
+/// CollisionObject can be used to manage collision detection objects. 
+/// CollisionObject maintains all information that is needed for a collision detection: Shape, Transform and AABB proxy.
+/// They can be added to the CollisionWorld.
 struct	CollisionObject
 {
 	SimdTransform	m_worldTransform;
@@ -53,8 +56,14 @@ struct	CollisionObject
 
 	void*			m_userPointer;//not use by Bullet internally
 
-	//time of impact calculation
+	///time of impact calculation
 	float			m_hitFraction; 
+	
+	///Swept sphere radius (0.0 by default), see ConvexConvexAlgorithm::
+	float			m_ccdSweptShereRadius;
+
+	/// Don't do continuous collision detection if square motion (in one step) is less then m_ccdSquareMotionTreshold
+	float			m_ccdSquareMotionTreshold;
 
 	bool			mergesSimulationIslands() const;
 

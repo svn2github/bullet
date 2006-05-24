@@ -25,6 +25,10 @@
 class DynWorld;
 class HullContactCollector;
 
+/// Hull implements a convex collision detection algorithm based on Separating Axis Theorem (SAT). It is an alternative to GJK.
+/// It calculates the separating axis, and based on that it calculates the contact manifold (points) in one go.
+/// The separating axis calculation is approximated, not all edge-edge calculations are performed (performance reasons).
+/// Future idea is to combine this with GJK for polyhedra: GJK to calculate the separating axis, and Hull clipping code to calculate the full set of contacts.
 class Hull : public Shape
 {
 	friend class ShapeCollider;
