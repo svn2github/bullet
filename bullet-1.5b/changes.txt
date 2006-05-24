@@ -1,6 +1,9 @@
 Bullet Continuous Collision Detection and Physics Library
 Erwin Coumans
 
+2006 May 24
+	Improved GJK accuracy, fixed GjkConvexCast issue, thanks to ~MyXa~ for reporting
+	
 2006 May 19
 	Added restitution support
 	Moved out Friction and Dynamics info from ManifoldPoint (removed logical dependency)
