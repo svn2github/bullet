@@ -1,3 +1,0 @@
-SubDir TOP Demos ConvexDecompositionDemo ;
-
-ExtraDemo ConvexDecompositionDemo : [ Wildcard *.h *.cpp  ] ;
