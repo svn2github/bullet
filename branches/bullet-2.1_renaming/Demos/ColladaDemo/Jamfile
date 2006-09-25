@@ -1,0 +1,4 @@
+SubDir TOP Demos ColladaDemo ;
+
+ExtraDemo ColladaDemo : [ Wildcard *.h *.cpp  ] ;
+MsvcIncDirs ColladaDemo : "../../Extras/FCollada" ;
