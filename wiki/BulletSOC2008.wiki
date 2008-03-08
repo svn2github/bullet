@@ -1,0 +1,15 @@
+#summary Bullet physics library GSOC 2008 idea page
+
+= Introduction =
+
+Google Summer of Code encourages students to participate in open source projects, and Bullet open source project is interested in participating as organization.
+
+= Some ideas =
+
+  * Add NVIdia CUDA support to accelerate parts of Bullet using graphics hardware (GPGPU)
+  * Bring the Nima Maya exporter in a useable state: add Bullet support and replace FCollada by COLLADA-DOM
+  * Add Featherstone constraint solver implementation
+  * See the outstanding issue list for more ideas
+
+For further discussion, you can use the Bullet physics forums:
+http://www.bulletphysics.com/Bullet/phpBB3
