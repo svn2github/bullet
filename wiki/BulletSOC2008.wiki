@@ -8,6 +8,7 @@ Google Summer of Code encourages students to participate in open source projects
 
   * Add NVIdia CUDA support to accelerate parts of Bullet using graphics hardware (GPGPU)
   * Add SAT convex collision detection, see http://code.google.com/p/bullet/issues/detail?id=31
+  * Add one-shot contact generation, see [http://code.google.com/p/bullet/issues/detail?id=20 details]
   * Bring Maya Nima physics plugin in a useable state: add Bullet support and replace FCollada by COLLADA-DOM, see [http://bulletphysics.com/Bullet/phpBB3/viewtopic.php?f=12&t=1611 discussion]
   * Add Featherstone constraint solver implementation
   * See the outstanding [http://code.google.com/p/bullet/issues/list issue list] for more ideas
