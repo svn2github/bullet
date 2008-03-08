@@ -15,5 +15,5 @@ Google Summer of Code encourages students to participate in open source projects
   * Add Featherstone constraint solver implementation
   * See the outstanding [http://code.google.com/p/bullet/issues/list issue list] for more ideas
 
-If you are student, and interested in helping out in a Bullet GSOC project, please get in touch using the Bullet physics forums:
+If you are a student, and interested in helping out in a Bullet GSOC project, please get in touch using the Bullet physics forums:
 http://www.bulletphysics.com/Bullet/phpBB3
