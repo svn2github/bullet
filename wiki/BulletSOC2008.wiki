@@ -1,4 +1,4 @@
-#summary Bullet physics library GSOC 2008 idea page
+#summary Bullet 3D game physics library, GSOC 2008 idea page
 
 = Introduction =
 
