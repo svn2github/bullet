@@ -1,3 +1,0 @@
-PROJECT(BULLET_PHYSICS)
-
-SUBDIRS(src Demos Extras)
