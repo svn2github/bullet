@@ -2,14 +2,14 @@
 <g:plusone/>
 Google decided to [http://code.google.com/p/support/issues/detail?id=24324 disable the Updates/Activity tab] so here is a temporarily replacement using Wiki gadgets.
 
-= Recent Commits =
+= Recent Commits to trunk =
 
 <wiki:gadget url="http://bulletphysics.org/~erwincoumans/com1.xml" up_projectName="bullet" width="800"  height="100"/>
 
-= Updated Issues =
+= Updates to All Issues =
 
 <wiki:gadget url="http://bulletphysics.org/~erwincoumans/gc23.xml" up_projectName="bullet" width="800"  height="250"/>
 
-= Detailed Issue Updates =
+= Detailed Updates to Open Issues =
 
 <wiki:gadget url="http://bulletphysics.org/~erwincoumans/t5.xml" up_projectName="bullet" width="800"  height="250"/>
