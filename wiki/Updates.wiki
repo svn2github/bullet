@@ -6,7 +6,7 @@ Google decided to [http://code.google.com/p/support/issues/detail?id=24324 disab
 
 <wiki:gadget url="http://bulletphysics.org/~erwincoumans/com1.xml" up_projectName="bullet" width="800"  height="100"/>
 
-= Updates to All Issues =
+= Updates to All Issues (including closed/fixed issues) =
 
 <wiki:gadget url="http://bulletphysics.org/~erwincoumans/gc23.xml" up_projectName="bullet" width="800"  height="250"/>
 
