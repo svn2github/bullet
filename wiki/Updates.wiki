@@ -11,5 +11,5 @@ Google decided to [http://code.google.com/p/support/issues/detail?id=24324 disab
 <wiki:gadget url="http://bulletphysics.org/~erwincoumans/gc23.xml" up_projectName="bullet" width="800"  height="250"/>
 
 = Detailed Updates to Open Issues =
-
+You can hover over a link or click on the +, but the actual links are broken (someone needs to fix this Wiki Gadget)
 <wiki:gadget url="http://bulletphysics.org/~erwincoumans/t5.xml" up_projectName="bullet" width="800"  height="250"/>
