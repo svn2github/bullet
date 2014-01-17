@@ -6,5 +6,5 @@ The Bullet Physics source code is migrated to http://github.com/erwincoumans/bul
 
 All issues will be moved to github, and the original googlecode issue will point to the new github issue.
 
-For a while you can still browse the source code here:
+For a while you can still browse the Bullet 2.82 source code here:
 https://code.google.com/p/bullet/source/browse/
