@@ -1,0 +1,9 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+The Issue Tracker is moved to github. https://github.com/bulletphysics/bullet3/issues
+We will transfer all issues to github soon.
+
+The old issue tracker can still be reached here:
+https://code.google.com/p/bullet/issues/list
