@@ -1,16 +1,3 @@
-#summary Recent Commits and Updated Issues
-<g:plusone/>
-Google decided to [http://code.google.com/p/support/issues/detail?id=24324 disable the Updates/Activity tab] so here is a temporarily replacement using Wiki gadgets.
+= Moved to GITHUB! =
 
-= Recent Commits to trunk =
-
-<wiki:gadget url="http://bulletphysics.org/~erwincoumans/com1.xml" up_projectName="bullet" width="800"  height="100"/>
-
-= Updates to All Issues (including closed/fixed issues) =
-
-<wiki:gadget url="http://bulletphysics.org/~erwincoumans/gc23.xml" up_projectName="bullet" width="800"  height="250"/>
-
-= Detailed Updates to Open Issues =
-<wiki:gadget url="http://bulletphysics.org/~erwincoumans/t6.xml" up_projectName="bullet" width="800"  height="250"/>
-
-Thanks to fixes from [http://code.google.com/p/adblockforchrome/wiki/Updates adblockforchrome]
+Please visit https://github.com/bulletphysics/bullet3
