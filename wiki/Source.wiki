@@ -2,9 +2,9 @@
 
 = Moved to GITHUB! =
 
-The Bullet Physics source code is migrated to http://github.com/erwincoumans/bullet3
+The Bullet Physics source code is migrated to http://github.com/bulletphysics/bullet3
 
-All open issues are moved to the github issue tracker.
+All open issues have been moved to the github issue tracker.
 
 For a while you can still browse the Bullet 2.82 source code here:
 https://code.google.com/p/bullet/source/browse/
